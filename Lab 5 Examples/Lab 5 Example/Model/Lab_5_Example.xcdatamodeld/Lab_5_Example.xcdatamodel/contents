@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Album" representedClassName="Album" syncable="YES" codeGenerationType="class">
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="artist" maxCount="1" deletionRule="No Action" destinationEntity="Artist" inverseName="albums" inverseEntity="Artist"/>
+    </entity>
+    <entity name="Artist" representedClassName="Artist" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="hometown" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="albums" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Album" inverseName="artist" inverseEntity="Album"/>
+    </entity>
+    <elements>
+        <element name="Album" positionX="-54" positionY="9" width="128" height="89"/>
+        <element name="Artist" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
